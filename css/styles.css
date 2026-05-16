@@ -448,6 +448,33 @@
     color: var(--muted); font-size: 0.9rem;
     line-height: 1.8; margin-bottom: 2rem;
   }
+  .project-list {
+    list-style: none;
+    display: grid;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    color: var(--muted);
+    font-size: 0.86rem;
+    line-height: 1.7;
+  }
+  .project-list li {
+    position: relative;
+    padding-left: 1rem;
+  }
+  .project-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 5px;
+    height: 5px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  .project-list strong {
+    color: var(--text);
+    font-weight: 700;
+  }
   .project-tags {
     display: flex; flex-wrap: wrap; gap: 8px;
     margin-bottom: 2rem;
