@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jamel — Développeur Full-Stack</title>
+<title>Djamel Nait Sidenas — Développeur Full-Stack</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -24,7 +24,7 @@
 
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
 
   body {
     background: var(--bg);
@@ -34,6 +34,7 @@
     line-height: 1.6;
     cursor: none;
     overflow-x: hidden;
+    max-width: 100vw;
   }
 
   /* Custom Cursor */
@@ -577,17 +578,97 @@
   }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* Responsive */
+  /* ── Responsive ── */
   @media (max-width: 900px) {
-    #hero { grid-template-columns: 1fr; gap: 3rem; }
-    .hero-terminal-wrap { display: none; }
-    #about { grid-template-columns: 1fr; gap: 3rem; }
-    .skills-cols { grid-template-columns: 1fr 1fr; }
-    .projects-grid { grid-template-columns: 1fr; }
-    .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
-    .timeline { grid-template-columns: 120px 1fr; }
-    .hero-ctas { flex-direction: column; align-items: flex-start; }
+
+    /* Cursor : désactivé sur touch */
+    body { cursor: auto; }
+    #cursor, #cursor-trail { display: none; }
+
+    /* Nav */
     .nav-links { display: none; }
+    nav { padding: 1.2rem 5vw; }
+
+    /* Hero */
+    #hero {
+      grid-template-columns: 1fr;
+      padding: 7rem 5vw 4rem;
+      min-height: auto;
+      gap: 0;
+    }
+    .hero-terminal-wrap { display: none; }
+    h1 { font-size: clamp(2.8rem, 11vw, 4.5rem); }
+    .hero-desc { font-size: 1rem; max-width: 100%; }
+    .hero-ctas { flex-direction: column; align-items: flex-start; }
+    .hero-scroll { display: none; }
+
+    /* About */
+    #about {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      padding: 5rem 5vw;
+    }
+    .stats-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .stat-num { font-size: 2rem; }
+
+    /* Skills */
+    #skills { padding: 5rem 5vw; }
+    .skills-cols {
+      grid-template-columns: 1fr;
+    }
+    .skill-col { padding: 1.8rem; }
+
+    /* Projects */
+    #projects { padding: 5rem 5vw; }
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+    .project-card { padding: 2rem; }
+    .project-card.featured {
+      grid-column: span 1;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .project-card.featured h3 { font-size: 2rem; }
+    .projects-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+
+    /* Experience */
+    #experience { padding: 5rem 5vw; }
+    .timeline {
+      grid-template-columns: 80px 1fr;
+      gap: 0;
+    }
+    .timeline-year { padding: 2rem 1.5rem 2rem 0; }
+    .timeline-content { padding: 2rem 0 2rem 1.5rem; }
+    .year-text { font-size: 0.7rem; }
+
+    /* Contact */
+    #contact { padding: 5rem 5vw; }
+    #contact h2 { font-size: clamp(2.2rem, 9vw, 4rem); }
+    .contact-links { gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+
+    /* Footer */
+    footer { flex-direction: column; text-align: center; gap: 0.5rem; }
+
+    /* Section headings */
+    h2 { font-size: clamp(2rem, 8vw, 3rem); }
+
+    /* General sections */
+    section { padding: 5rem 5vw; }
+  }
+
+  /* Extra small */
+  @media (max-width: 480px) {
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .stat-item { padding: 1.2rem; }
+    .tag { font-size: 0.65rem; padding: 3px 8px; }
+    .project-card { padding: 1.5rem; }
+    .skill-col { padding: 1.4rem; }
+    .timeline { grid-template-columns: 60px 1fr; }
+    .timeline-year { padding: 1.5rem 1rem 1.5rem 0; }
+    .timeline-content { padding: 1.5rem 0 1.5rem 1rem; }
   }
 </style>
 </head>
@@ -616,7 +697,7 @@
 
   <div class="hero-content">
     <div class="hero-tag">Disponible pour de nouvelles opportunités</div>
-    <h1>Djamel NS<br>Développeur<br><em>Full-Stack</em></h1>
+    <h1>Djamel Ns<br>Développeur<br><em>Full-Stack</em></h1>
     <p class="hero-desc">
       Je conçois et construis des applications SaaS robustes —
       du backend Java/Spring Boot jusqu'à l'interface Angular.
@@ -1017,8 +1098,8 @@
       </svg>
     </a>
     <div class="contact-links">
-      <a href="#https://github.com/yaml-ns" class="contact-link">GitHub</a>
-      <a href="https://www.linkedin.com/in/djamel-nait-sidenas/" class="contact-link">LinkedIn</a>
+      <a href="https://github.com/yaml-ns" class="contact-link">GitHub</a>
+      <a href="https://linkedin.com/djamel-nait-sidenas/" class="contact-link">LinkedIn</a>
       <a href="#" class="contact-link">Montréal, QC</a>
     </div>
   </div>
@@ -1026,31 +1107,37 @@
 
 <!-- Footer -->
 <footer>
-  <div class="footer-logo">J<span>.</span></div>
-  <p>© 2025 Jamel Ns — Développeur Full-Stack</p>
-  <p style="font-family:'JetBrains Mono',monospace; font-size:0.72rem">Java · Spring · Php · Python</p>
+  <div class="footer-logo">DNS<span>.</span></div>
+  <p>© 2025 Djamel Ns — Développeur Full-Stack</p>
+  <p style="font-family:'JetBrains Mono',monospace; font-size:0.72rem">Java · Spring · Angular · Php· Python</p>
 </footer>
 
 <script>
-  // Cursor
+  // Cursor — desktop only
   const cursor = document.getElementById('cursor');
   const trail = document.getElementById('cursor-trail');
-  document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-    trail.style.left = e.clientX + 'px';
-    trail.style.top = e.clientY + 'px';
-  });
-  document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.style.transform = 'translate(-50%,-50%) scale(2.5)';
-      trail.style.transform = 'translate(-50%,-50%) scale(1.5)';
+  if (window.matchMedia('(pointer: fine)').matches) {
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+      trail.style.left = e.clientX + 'px';
+      trail.style.top = e.clientY + 'px';
     });
-    el.addEventListener('mouseleave', () => {
-      cursor.style.transform = 'translate(-50%,-50%) scale(1)';
-      trail.style.transform = 'translate(-50%,-50%) scale(1)';
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'translate(-50%,-50%) scale(2.5)';
+        trail.style.transform = 'translate(-50%,-50%) scale(1.5)';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+        trail.style.transform = 'translate(-50%,-50%) scale(1)';
+      });
     });
-  });
+  } else {
+    cursor.style.display = 'none';
+    trail.style.display = 'none';
+    document.body.style.cursor = 'auto';
+  }
 
   // Navbar scroll
   const navbar = document.getElementById('navbar');
